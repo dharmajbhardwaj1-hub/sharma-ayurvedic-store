@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Ayurvedic Palette (OKLCH) */
+    /* Forest Green #2d5a27 → L=0.37 C=0.11 H=142 */
+    --primary: 0.37 0.11 142;
+    /* Warm Cream #f9f7f2 */
+    --primary-foreground: 0.975 0.008 88;
+
+    /* Earthy Gold #d4af37 → L=0.74 C=0.13 H=82 */
+    --accent: 0.74 0.13 82;
+    /* Dark text for on-gold */
+    --accent-foreground: 0.15 0 0;
+
+    /* Warm Cream background #f9f7f2 */
+    --background: 0.975 0.008 88;
+    /* Dark text #1a1a1a */
+    --foreground: 0.15 0 0;
+
+    /* Card #F2EBD9 */
+    --card: 0.94 0.025 85;
+    --card-foreground: 0.15 0 0;
+
+    /* Popover */
+    --popover: 0.94 0.025 85;
+    --popover-foreground: 0.15 0 0;
+
+    /* Secondary: light green tint */
+    --secondary: 0.92 0.03 142;
+    --secondary-foreground: 0.37 0.11 142;
+
+    /* Muted: beige */
+    --muted: 0.96 0.015 85;
+    --muted-foreground: 0.42 0 0;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders: #D8C9A8 */
+    --border: 0.82 0.04 82;
+    --input: 0.82 0.04 82;
+    --ring: 0.37 0.11 142;
+
+    /* Charts */
+    --chart-1: 0.37 0.11 142;
+    --chart-2: 0.74 0.13 82;
+    --chart-3: 0.6 0.118 184.704;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 0.94 0.025 85;
+    --sidebar-foreground: 0.15 0 0;
+    --sidebar-primary: 0.37 0.11 142;
+    --sidebar-primary-foreground: 0.975 0.008 88;
+    --sidebar-accent: 0.74 0.13 82;
+    --sidebar-accent-foreground: 0.15 0 0;
+    --sidebar-border: 0.82 0.04 82;
+    --sidebar-ring: 0.37 0.11 142;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Open Sans", system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Crimson Text", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(249, 247, 242, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(216, 201, 168, 0.5);
+  }
+
+  .glass-dark {
+    background: rgba(45, 90, 39, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .text-gold {
+    color: #d4af37;
+  }
+
+  .bg-gold {
+    background-color: #d4af37;
+  }
+
+  .bg-forest {
+    background-color: #2d5a27;
+  }
+
+  .text-forest {
+    color: #2d5a27;
+  }
+
+  .border-gold {
+    border-color: #d4af37;
+  }
+
+  .border-forest {
+    border-color: #2d5a27;
+  }
+
+  .card-ayur {
+    background: #f2ebd9;
+    border: 2px solid #d8c9a8;
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(45, 90, 39, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card-ayur:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(45, 90, 39, 0.16);
+  }
+
+  .section-heading {
+    font-family: "Crimson Text", Georgia, serif;
+    font-weight: 700;
+    color: #2d5a27;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .btn-gold {
+    background: #d4af37;
+    color: #1a1a1a;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: 0.6rem 1.75rem;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+  }
+
+  .btn-gold:hover {
+    background: #c49d28;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+  }
+
+  .btn-outline-cream {
+    background: transparent;
+    color: #f9f7f2;
+    border: 2px solid #f9f7f2;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    border-radius: 9999px;
+    padding: 0.6rem 1.75rem;
+    transition: background 0.2s, color 0.2s;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-outline-cream:hover {
+    background: rgba(249, 247, 242, 0.15);
+  }
+}
